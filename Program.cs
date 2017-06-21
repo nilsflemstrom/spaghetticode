@@ -66,10 +66,21 @@ namespace Spaghetticode
                 Console.WriteLine();
                 Console.WriteLine();
 
+                var columnWitdth1 = 20;
+                var columnWitdth2 = 15;
+                var total = 0;
+                Console.WriteLine("|" + "".PadRight(columnWitdth1, '=') + "|" + "".PadRight(columnWitdth2, '=') + "|");
+                Console.WriteLine("| " + "Extension".PadRight(columnWitdth1-1, ' ') + "| " + "Rows".PadRight(columnWitdth2-1, ' ') + "|");
+                Console.WriteLine("|" + "".PadRight(columnWitdth1, '=') + "|" + "".PadRight(columnWitdth2, '=') + "|");                                
                 foreach (var extension in rowCountsPerExtension.Keys)
                 {
-                    Console.WriteLine($"{extension} {rowCountsPerExtension[extension]}");
+                    total = total + rowCountsPerExtension[extension];
+                    Console.WriteLine("| " + $"{extension}".PadRight(columnWitdth1-1, ' ') + "| " + $"{rowCountsPerExtension[extension]}".PadRight(columnWitdth2-1, ' ') + "|");
                 }
+                Console.WriteLine("|" + "".PadRight(columnWitdth1, '=') + "|" + "".PadRight(columnWitdth2, '=') + "|");
+                Console.WriteLine("| " + $"Total".PadRight(columnWitdth1 - 1, ' ') + "| " + $"{total}".PadRight(columnWitdth2 - 1, ' ') + "|");
+                Console.WriteLine("|" + "".PadRight(columnWitdth1, '=') + "|" + "".PadRight(columnWitdth2, '=') + "|");
+
             }
             catch(Exception exc)
             {
@@ -92,8 +103,8 @@ namespace Spaghetticode
             }
             catch
             {
-                if (!rowCountsPerExtension.ContainsKey("Too long dir")) rowCountsPerExtension["Too long dir"] = 1;
-                else rowCountsPerExtension["Too long dir"]++;
+                if (!rowCountsPerExtension.ContainsKey("Too long dirpath")) rowCountsPerExtension["Too long dirpath"] = 1;
+                else rowCountsPerExtension["Too long dirpath"]++;
                 return;
             }
 
@@ -127,8 +138,8 @@ namespace Spaghetticode
                     }
                     catch 
                     {
-                        if (!rowCountsPerExtension.ContainsKey("Too long filename")) rowCountsPerExtension["Too long filename"] = 1;
-                        else rowCountsPerExtension["Too long filename"]++;
+                        if (!rowCountsPerExtension.ContainsKey("Too long filepath")) rowCountsPerExtension["Too long filepath"] = 1;
+                        else rowCountsPerExtension["Too long filepath"]++;
                         //Ignore
                     }
                 }
@@ -147,8 +158,8 @@ namespace Spaghetticode
                 }
                 catch
                 {
-                    if (!rowCountsPerExtension.ContainsKey("Too long dir")) rowCountsPerExtension["Too long dir"] = 1;
-                    else  rowCountsPerExtension["Too long dir"]++;
+                    if (!rowCountsPerExtension.ContainsKey("Too long dirpath")) rowCountsPerExtension["Too long dirpath"] = 1;
+                    else  rowCountsPerExtension["Too long dirpath"]++;
                 }
                 
             }

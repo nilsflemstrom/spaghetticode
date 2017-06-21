@@ -7,6 +7,7 @@ spaghetticode . cs cshtml sql
 
 will count all rows in files .cs, .cshtml and .sql 
 
+´
 |====================|===============|
 | Extension          | Rows          |
 |====================|===============|
@@ -16,3 +17,4 @@ will count all rows in files .cs, .cshtml and .sql
 |====================|===============|
 | Total              | 288432        |
 |====================|===============|
+´

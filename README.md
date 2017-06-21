@@ -3,11 +3,12 @@ Count the number of rows in source files in a directory
 
 Example:
 
-spaghetticode . cs cshtml sql
-
-Will count all rows in files .cs, .cshtml and .sql in current directory
+Count all rows in files .cs, .cshtml and .sql in current directory
 
 ```
+spaghetticode . cs cshtml sql
+
+
 |====================|===============|
 | Extension          | Rows          |
 |====================|===============|

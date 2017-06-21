@@ -5,7 +5,7 @@ Example:
 
 spaghetticode . cs cshtml sql
 
-will count all rows in files .cs, .cshtml and .sql 
+Will count all rows in files .cs, .cshtml and .sql in current directory
 
 ```
 |====================|===============|
